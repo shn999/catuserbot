@@ -6,7 +6,7 @@ import asyncio
 async def kek(keks):
     keks = await edit_or_reply(keks, ":\\")
     uio = ["/", "\\"]
-    for i in range(15):
+    for i in range(295):
         await asyncio.sleep(0.5)
         txt = ":" + uio[i % 2]
         await keks.edit(txt)
@@ -17,7 +17,7 @@ async def kek(keks):
 async def lol(lel):
     lel = await edit_or_reply(lel, "-__-")
     okay = "-__-"
-    for _ in range(15):
+    for _ in range(75):
         await asyncio.sleep(0.5)
         okay = okay[:-1] + "_-"
         await lel.edit(okay)
@@ -28,7 +28,7 @@ async def lol(lel):
 async def fun(e):
     e = await edit_or_reply(e, ";__;")
     t = ";__;"
-    for _ in range(15):
+    for _ in range(75):
         await asyncio.sleep(0.5)
         t = t[:-1] + "_;"
         await e.edit(t)
