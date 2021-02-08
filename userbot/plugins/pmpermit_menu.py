@@ -16,8 +16,8 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
 PREV_REPLY_MESSAGE = {}
 PM = f"""Hello. You are accessing the availabe menu of my master, {DEFAULTUSER}.
 __Let's make this smooth and let me know why you are here.__
-**Choose one of the following reasons why you are here:**
 
+**Choose one of the following reasons why you are here:**
 `a`. To chat with my master
 `b`. To spam my master's inbox.
 `c`. To enquire something
@@ -26,9 +26,9 @@ ONE = """__Okay. Your request has been registered. Do not spam my master's inbox
 
 **⚠️ You will be blocked and reported if you spam nibba. ⚠️**\n\n"""
 TWO = " `███████▄▄███████████▄  \n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓███░░░░░░░░░░░░█\n██████▀▀▀█░░░░██████▀  \n░░░░░░░░░█░░░░█  \n░░░░░░░░░░█░░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░░▀▀ `\n\n**So uncool, this is not your home. Go bother someone else. You have been blocked and reported until further notice.**"
-THREE = "__Okay. My master has not seen your message yet.He/She usually responds to people,though idk about retarted ones.__\n __He'll respond when he/she comes back, if he/she wants to.There's already a lot of pending messages😶__\n **Please do not spam unless you wish to be blocked and reported.**"
-FOUR = "`Okay. please have the basic manners as to not bother my master too much. If he/she wishes to help you, he/she will respond to you soon.`\n**Do not ask repeatdly else you will be blocked and reported.**"
-LWARN = "**This is your last warning. DO NOT send another message else you will be blocked and reported. Keep patience. My master will respond you ASAP.**\n"
+THREE = "__Okay. My master has not seen your message yet. He usually responds to people, though idk about retarted ones.__\n __He'll respond when he comes online. There's already a lot of pending messages😶__\n **Please do not spam unless you wish to be blocked and reported.**"
+FOUR = "`Okay. please have the basic manners as to not bother my master too much. If he wishes to help you, he will respond to you soon.` \n**Do not ask repeatdly else you will be blocked and reported.**"
+LWARN = "**This is your last warning! DO NOT send another message else you will be blocked and reported. Keep patience. My master will respond you ASAP.**\n"
 
 
 @bot.on(events.NewMessage(pattern=r"\/start", incoming=True))
