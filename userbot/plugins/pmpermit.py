@@ -19,7 +19,7 @@ PREV_REPLY_MESSAGE = {}
 CACHE = {}
 PMPERMIT_PIC = Config.PMPERMIT_PIC
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
-USER_BOT_WARN_ZERO = "You were spamming my peru master's inbox, henceforth you are blocked by my master's userbot. **Now GTFO, i'm playing minecraft** "
+USER_BOT_WARN_ZERO = "HeY!! You were spamming my Master's PM, which I didn't like. 😑 \nYou have been BLOCKED and reported as SPAM, until further notice. 😐"
 
 
 if Config.PRIVATE_GROUP_ID is not None:
@@ -116,7 +116,7 @@ if Config.PRIVATE_GROUP_ID is not None:
         if user.id in PM_START:
             PM_START.remove(user.id)
         await event.edit(
-            f"`You are blocked Now .You Can't Message Me from now..`[{user.first_name}](tg://user?id={user.id})"
+            f"`You are BLOCKED now 🤐 You can't send message anymore from now..😡`[{user.first_name}](tg://user?id={user.id})"
         )
         await event.client(functions.contacts.BlockRequest(user.id))
 
@@ -130,7 +130,7 @@ if Config.PRIVATE_GROUP_ID is not None:
                 return await edit_delete(event, "`Couldn't Fectch user`", 5)
         await event.client(functions.contacts.UnblockRequest(user.id))
         await event.edit(
-            f"`You are Unblocked Now .You Can Message Me From now..`[{user.first_name}](tg://user?id={user.id})"
+            f"`You are Unblocked now .You Can send message from now..`[{user.first_name}](tg://user?id={user.id})"
         )
 
     @bot.on(admin_cmd(pattern="listapproved$"))
@@ -158,7 +158,7 @@ if Config.PRIVATE_GROUP_ID is not None:
     async def disapprove_p_m(event):
         if event.fwd_from:
             return
-        result = "`ok , everyone is disapproved now`"
+        result = "`ok, everyone is disapproved now`"
         pmpermit_sql.disapprove_all()
         await edit_delete(event, result, parse_mode=parse_pre, time=10)
 
@@ -248,15 +248,17 @@ if Config.PRIVATE_GROUP_ID is not None:
                         warns=warns,
                     )
                     + "\n\n"
-                    + "**Send** `/start` ** so that my master can decide why you're here.**"
+                    + "**Send** `/start` **so that my boss can decide why you're here.**"
                 )
             else:
 
                 USER_BOT_NO_WARN = (
-                    f"`Hi `{mention}`, I haven't approved you yet to personal message me, Don't spam my inbox."
-                    f"Just say the reason and wait until you get approved.\
-                                    \n\nyou have {warns}/{totalwarns} warns`\
-                                    \n\n**Send** `/start` **so that my master can decide why you're here.**"
+                    f"HeY `{mention}`!\n ⚠️ **This is an automated message** ⚠️\n\n."
+                    f"Me, assiatant of my BOSS, haven't approved you to PM yet! "
+                    f"Till then, don't spam my Master's PM, you'll get blocked if you do so!\
+                                    \n\nYou have {warns}/{totalwarns} warns`\
+                                    \n\n**Send** `/start` **so that my boss can decide why you're here.**\
+                                    \nYou can also contact with him via @sashn9bot bot."
                 )
         else:
             if Config.CUSTOM_PMPERMIT_TEXT:
@@ -277,9 +279,12 @@ if Config.PRIVATE_GROUP_ID is not None:
                 )
             else:
                 USER_BOT_NO_WARN = (
-                    f"`Hi `{mention}`, I haven't approved you yet to personal message me, Don't spam my inbox."
-                    f"Just say the reason and wait until you get approved.\
-                                    \n\nyou have {warns}/{totalwarns} warns`"
+                    f"HeY `{mention}`!\n ⚠️ **This is an automated message** ⚠️\n\n."
+                    f"Me, assiatant of my BOSS, haven't approved you to PM yet! "
+                    f"Till then, don't spam my Master's PM, you'll get blocked if you do so!\
+                                    \n\nYou have {warns}/{totalwarns} warns`\
+                                    \n\n**Send** `/start` **so that my boss can decide why you're here.**\
+                                    \nYou can also contact with him via @sashn9bot bot."
                 )
         if PMPERMIT_PIC:
             r = await event.reply(USER_BOT_NO_WARN, file=PMPERMIT_PIC)
