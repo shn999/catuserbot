@@ -836,7 +836,7 @@ def get_file_path(service, file_id, file_name):
         response = (
             service.files()
             .get(fileId=file_id, fields="parents", supportsTeamDrives=True)
-            .execute()S
+            .execute()
         )
         if not response:
             break
