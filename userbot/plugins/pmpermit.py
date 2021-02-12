@@ -60,7 +60,7 @@ if Config.PRIVATE_GROUP_ID is not None:
             pmpermit_sql.approve(user.id, reason)
             await edit_delete(
                 event,
-                f"`Approved to pm `[{user.first_name}](tg://user?id={user.id})",
+                f"[{user.first_name}](tg://user?id={user.id}) `approved to pm 😊`",
                 5,
             )
             if user.id in PMMESSAGE_CACHE:
@@ -96,7 +96,7 @@ if Config.PRIVATE_GROUP_ID is not None:
             pmpermit_sql.disapprove(user.id)
             await edit_or_reply(
                 event,
-                f"`disapproved to pm` [{user.first_name}](tg://user?id={user.id})",
+                f"[{user.first_name}](tg://user?id={user.id}) `disapproved to pm!😐`",
             )
         else:
             await edit_or_reply(
