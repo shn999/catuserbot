@@ -7,7 +7,7 @@ from . import ALIVE_NAME, StartTime, catversion, get_readable_time, mention, rep
 
 DEFAULTUSER = ALIVE_NAME or "cat"
 CAT_IMG = Config.ALIVE_PIC
-CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "✮ MY BOT IS RUNNING SUCCESSFULLY ✮"
+CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "✮ EDITH is online ✮"
 EMOJI = Config.CUSTOM_ALIVE_EMOJI or "  ✥ "
 
 
@@ -26,7 +26,9 @@ async def amireallyalive(alive):
         cat_caption += f"**{EMOJI} Catuserbot Version :** `{catversion}`\n"
         cat_caption += f"**{EMOJI} Python Version :** `{python_version()}\n`"
         cat_caption += f"**{EMOJI} Uptime :** `{uptime}\n`"
-        cat_caption += f"**{EMOJI} Master:** {mention}\n"
+        cat_caption += f"**{EMOJI} Master:** {mention}\n\n"
+        cat_caption += f"Sohan'z Bot: E.D.I.T.H. \n"
+        cat_caption += f"<i>Even Dead, I'm The Hero! </i>😎 \n"
         await alive.client.send_file(
             alive.chat_id, CAT_IMG, caption=cat_caption, reply_to=reply_to_id
         )
@@ -40,7 +42,9 @@ async def amireallyalive(alive):
             f"**{EMOJI} Catuserbot Version :** `{catversion}`\n"
             f"**{EMOJI} Python Version :** `{python_version()}\n`"
             f"**{EMOJI} Uptime :** `{uptime}\n`"
-            f"**{EMOJI} Master:** {mention}\n",
+            f"**{EMOJI} Master:** {mention}\n\n"
+            f"Sohan'z Bot: E.D.I.T.H. \n"
+            f"<i>Even Dead, I'm The Hero! </i>😎 \n",
         )
 
 
@@ -51,11 +55,13 @@ async def amireallyalive(alive):
         return
     tgbotusername = Config.TG_BOT_USER_NAME_BF_HER
     reply_to_id = await reply_id(alive)
-    cat_caption = f"**Catuserbot is Up and Running**\n"
+    cat_caption = f"**EDITH is Up and Running**\n"
     cat_caption += f"**  -Telethon version :** `{version.__version__}\n`"
     cat_caption += f"**  -Catuserbot Version :** `{catversion}`\n"
     cat_caption += f"**  -Python Version :** `{python_version()}\n`"
-    cat_caption += f"**  -Master:** {mention}\n"
+    cat_caption += f"**  -Master:** {mention}\n\n"
+    cat_caption += f"Sohan'z Bot: E.D.I.T.H. \n"
+    cat_caption += f"<i>Even Dead, I'm The Hero! </i>😎 \n"
     results = await bot.inline_query(tgbotusername, cat_caption)  # pylint:disable=E0602
     await results[0].click(alive.chat_id, reply_to=reply_to_id, hide_via=True)
     await alive.delete()
