@@ -814,7 +814,7 @@ async def reset_parentId():
     return
 
 
-G_DRIVE_FILE_LINK = "📄 [{}](https://drive.google.com/open?id={}) __({})__"
+G_DRIVE_FILE_LINK = "📄 [{}](https://drive.google.com/file/d/{}) __({})__"
 G_DRIVE_FOLDER_LINK = "📁 [{}](https://drive.google.com/drive/folders/{})"
 
 
@@ -836,7 +836,7 @@ def get_file_path(service, file_id, file_name):
         response = (
             service.files()
             .get(fileId=file_id, fields="parents", supportsTeamDrives=True)
-            .execute()
+            .execute()S
         )
         if not response:
             break
@@ -871,7 +871,8 @@ async def get_output(service, file_id):
     if Config.G_DRIVE_INDEX_LINK:
         link = os.path.join(
             Config.G_DRIVE_INDEX_LINK.rstrip("/"),
-            quote(get_file_path(service, file_id, file_name)),
+            quote(get_file_path(file_name)),
+            #quote(get_file_path(service, file_id, file_name)),
         )
         if mime_type == "application/vnd.google-apps.folder":
             link += "/"
