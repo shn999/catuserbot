@@ -28,7 +28,7 @@ async def amireallyalive(alive):
         cat_caption += f"**{EMOJI} Uptime :** `{uptime}\n`"
         cat_caption += f"**{EMOJI} Master:** {mention}\n\n"
         cat_caption += f"Sohan'z Bot: E.D.I.T.H. \n"
-        cat_caption += f"<i>Even Dead, I'm The Hero! </i>😎 \n"
+        cat_caption += f"__Even Dead, I'm The Hero!__ 😎 \n"
         await alive.client.send_file(
             alive.chat_id, CAT_IMG, caption=cat_caption, reply_to=reply_to_id
         )
@@ -44,7 +44,7 @@ async def amireallyalive(alive):
             f"**{EMOJI} Uptime :** `{uptime}\n`"
             f"**{EMOJI} Master:** {mention}\n\n"
             f"Sohan'z Bot: E.D.I.T.H. \n"
-            f"<i>Even Dead, I'm The Hero! </i>😎 \n",
+            f"__Even Dead, I'm The Hero!__ 😎 \n",
         )
 
 
@@ -61,7 +61,7 @@ async def amireallyalive(alive):
     cat_caption += f"**  -Python Version :** `{python_version()}\n`"
     cat_caption += f"**  -Master:** {mention}\n\n"
     cat_caption += f"Sohan'z Bot: E.D.I.T.H. \n"
-    cat_caption += f"<i>Even Dead, I'm The Hero! </i>😎 \n"
+    cat_caption += f"__Even Dead, I'm The Hero!__ 😎 \n"
     results = await bot.inline_query(tgbotusername, cat_caption)  # pylint:disable=E0602
     await results[0].click(alive.chat_id, reply_to=reply_to_id, hide_via=True)
     await alive.delete()
