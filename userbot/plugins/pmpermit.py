@@ -254,9 +254,9 @@ if Config.PRIVATE_GROUP_ID is not None:
 
                 USER_BOT_NO_WARN = (
                     f"⚠️ **This is an automated message** ⚠️\n\n."
-                    f"Hi `{mention}`! \nMe, assiatant of my BOSS, haven't approved you to PM yet!"
+                    f"`Hi `{mention}`! \nMe, assiatant of my BOSS, haven't approved you to PM yet!"
                     f"Till then, don't spam my Master's PM, you'll get blocked if you do so!\
-                                    \n\nYou have {warns}/{totalwarns} warns!\
+                                    \n\nYou have {warns}/{totalwarns} warns!`\
                                     \n\n**Send** `/start` **so that my boss can decide why you're here.**\
                                     \nYou can also contact with him via @sashn9bot bot."
                 )
@@ -280,9 +280,9 @@ if Config.PRIVATE_GROUP_ID is not None:
             else:
                 USER_BOT_NO_WARN = (
                     f"⚠️ **This is an automated message** ⚠️\n\n."
-                    f"Hi `{mention}`! \nMe, assiatant of my BOSS, haven't approved you to PM yet!"
+                    f"`Hi `{mention}`! \nMe, assiatant of my BOSS, haven't approved you to PM yet!"
                     f"Till then, don't spam my Master's PM, you'll get blocked if you do so!\
-                                    \n\nYou have {warns}/{totalwarns} warns!\
+                                    \n\nYou have {warns}/{totalwarns} warns!`\
                                     \n\n**Send** `/start` **so that my boss can decide why you're here.**\
                                     \nYou can also contact with him via @sashn9bot bot."
                 )
