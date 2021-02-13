@@ -61,7 +61,7 @@ if Config.PRIVATE_GROUP_ID is not None:
             await edit_delete(
                 event,
                 f"[{user.first_name}](tg://user?id={user.id}) `approved to pm 😊`",
-                #5,
+                -1,
             )
             if user.id in PMMESSAGE_CACHE:
                 try:
