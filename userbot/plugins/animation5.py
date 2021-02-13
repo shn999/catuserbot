@@ -86,12 +86,11 @@ async def _(event):
         "😧",
         "😡",
         "😢",
-        "‎**Repo of catuserbot**",
         "😁",
         "😧",
         "😡",
         "😢",
-        "__**[Good to see you guys....]**__(github.com/sandy1709/catuserbot)",
+        "__**[Cool down man]**__(t.me/sashn9)",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
