@@ -7,8 +7,8 @@ import requests
 from . import convert_toimage, convert_tosticker
 
 
-@bot.on(admin_cmd(pattern="(rmbg|srmbg) ?(.*)"))
-@bot.on(sudo_cmd(pattern="(rmbg|srmbg) ?(.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="(rbg|srbg) ?(.*)"))
+@bot.on(sudo_cmd(pattern="(rbg|srbg) ?(.*)", allow_sudo=True))
 async def remove_background(event):
     if Config.REM_BG_API_KEY is None:
         return await edit_delete(
@@ -22,7 +22,7 @@ async def remove_background(event):
     if event.reply_to_msg_id and not input_str:
         reply_message = await event.get_reply_message()
         catevent = await edit_or_reply(event, "`Analysing this Image/Sticker...`")
-        file_name = os.path.join(Config.TEMP_DIR, "rmbg.png")
+        file_name = os.path.join(Config.TEMP_DIR, "rbg.png")
         try:
             await event.client.download_media(reply_message, file_name)
         except Exception as e:
@@ -39,7 +39,7 @@ async def remove_background(event):
     else:
         await edit_delete(
             event,
-            "`Reply to any image or sticker with rmbg/srmbg to get background less png file or webp format or provide image link along with command`",
+            "`Reply to any image or sticker with rbg/srbg to get background less png file or webp format or provide image link along with command`",
             5,
         )
         return
@@ -51,7 +51,7 @@ async def remove_background(event):
     else:
         await edit_delete(catevent, f"`{response.content.decode('UTF-8')}`", 5)
         return
-    if cmd == "srmbg":
+    if cmd == "srbg":
         file = convert_tosticker(remove_bg_image, filename="backgroundless.webp")
         await event.client.send_file(
             event.chat_id,
@@ -105,10 +105,10 @@ CMD_HELP.update(
     {
         "removebg": """**Plugin : **`removebg`
         
-  •  **Syntax : **`.rmbg <Link to Image> or reply to any image/sticker`
+  •  **Syntax : **`.rbg <Link to Image> or reply to any image/sticker`
   •  **Function : **__Removes the background of an image/sticker and send as png format__
   
-  •  **Syntax : **`.srmbg <Link to Image> or reply to any image/sticker`
+  •  **Syntax : **`.srbg <Link to Image> or reply to any image/sticker`
   •  **Function : **__Removes the background an image/sticker and send as sticker format__
 """
     }
