@@ -58,10 +58,13 @@ if Config.PRIVATE_GROUP_ID is not None:
             if user.id in PM_START:
                 PM_START.remove(user.id)
             pmpermit_sql.approve(user.id, reason)
-            await edit_delete(
+            #await edit_delete(
+            #    event,
+            #    f"[{user.first_name}](tg://user?id={user.id}) `approved to pm 😊`",
+            #    5,
+            await edit_or_reply(
                 event,
                 f"[{user.first_name}](tg://user?id={user.id}) `approved to pm 😊`",
-                300,
             )
             if user.id in PMMESSAGE_CACHE:
                 try:
